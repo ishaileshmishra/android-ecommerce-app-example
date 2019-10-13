@@ -1,7 +1,7 @@
 package com.allandroidprojects.ecomsample.cache;
 
 /**
- * Created by 06peng on 2015-07-03.
+ * Created by Shailesh Mishra @ mshaileshr@gmail.com.
  */
 
 import android.content.Context;
@@ -13,7 +13,6 @@ public class FileCache {
     private File cacheDir;
 
     public FileCache(Context context) {
-        //Find the dir to save cached images
         if (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED)) {
             cacheDir = new File(android.os.Environment.getExternalStorageDirectory(), "fresco_cache");
         } else {

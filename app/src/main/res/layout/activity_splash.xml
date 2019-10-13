@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_linear"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:id="@+id/layout_linear"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              android:background="@color/colorPrimary"
-              android:orientation="vertical"
-              android:gravity="center">
-<ImageView android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:src="@drawable/ic_apps_black_48dp"
-           android:layout_gravity="center"/>
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:layout_centerInParent="true"
+        style="@style/ActionBarTitle"
+        android:layout_gravity="center"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/powered"
+        android:padding="@dimen/dots_height"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center"/>
+
+</RelativeLayout>

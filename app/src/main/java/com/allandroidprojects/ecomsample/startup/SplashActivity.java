@@ -9,11 +9,14 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+
 import com.allandroidprojects.ecomsample.R;
 
 public class SplashActivity extends Activity implements Animation.AnimationListener {
-    Animation animFadeIn;
-    LinearLayout linearLayout;
+
+    private Animation animFadeIn;
+    RelativeLayout linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +24,7 @@ public class SplashActivity extends Activity implements Animation.AnimationListe
         setContentView(R.layout.activity_splash);
 
         if (Build.VERSION.SDK_INT < 16) {
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         } else {
             View decorView = getWindow().getDecorView();
             // Hide the status bar.
@@ -33,12 +34,11 @@ public class SplashActivity extends Activity implements Animation.AnimationListe
             // status bar is hidden, so hide that too if necessary.
         }
         // load the animation
-        animFadeIn = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.animation_fade_in);
+        animFadeIn = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.animation_fade_in);
         // set animation listener
         animFadeIn.setAnimationListener(this);
         // animation for image
-        linearLayout = (LinearLayout) findViewById(R.id.layout_linear);
+        linearLayout =  findViewById(R.id.layout_linear);
         // start the animation
         linearLayout.setVisibility(View.VISIBLE);
         linearLayout.startAnimation(animFadeIn);

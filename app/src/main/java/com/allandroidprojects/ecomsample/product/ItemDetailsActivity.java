@@ -30,6 +30,8 @@ public class ItemDetailsActivity extends AppCompatActivity {
         TextView textViewBuyNow = findViewById(R.id.text_action_bottom2);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().hide();
+
         //Getting image uri from previous screen
         if (getIntent() != null) {
             stringImageUri = getIntent().getStringExtra(ImageListFragment.STRING_IMAGE_URI);
