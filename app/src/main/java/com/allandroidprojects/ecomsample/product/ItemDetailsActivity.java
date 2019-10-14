@@ -18,8 +18,8 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 public class ItemDetailsActivity extends AppCompatActivity {
 
-    int imagePosition;
-    String stringImageUri;
+    private int imagePosition;
+    private String stringImageUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +31,11 @@ public class ItemDetailsActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().hide();
-
-        //Getting image uri from previous screen
         if (getIntent() != null) {
             stringImageUri = getIntent().getStringExtra(ImageListFragment.STRING_IMAGE_URI);
             imagePosition = getIntent().getIntExtra(ImageListFragment.STRING_IMAGE_URI,0);
         }
+
         Uri uri = Uri.parse(stringImageUri);
         mImageView.setImageURI(uri);
         mImageView.setOnClickListener(new View.OnClickListener() {
